@@ -1,5 +1,5 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:education/screens/courses_screen.dart';
+import 'package:education/view/screens/courses_screen.dart';
 import 'package:education/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -138,15 +138,15 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: size.height * 0.01),
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
+                  children:const [
+                     Text(
                       "Courses",
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
-                    Text(
+                     Text(
                       "See All",
                       style: TextStyle(
                           fontSize: 18,

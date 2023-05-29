@@ -1,5 +1,5 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:education/screens/home_screen.dart';
+import 'package:education/view/screens/home_screen.dart';
 import 'package:education/utils/constants.dart';
 import 'package:flutter/material.dart';
 

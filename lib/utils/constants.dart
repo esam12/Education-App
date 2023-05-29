@@ -36,6 +36,12 @@ List imageList = [
   "C#",
 ];
 
+List videoList = [
+  'Introduction to Flutter',
+  'Installing Flutter on Windows',
+  'Setup Emulator on Windows',
+  'Creating Our First App',
+];
 // List<Color> gradient = const [
 //   Colors.white,
 //   Colors.white,

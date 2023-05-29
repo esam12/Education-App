@@ -1,4 +1,6 @@
 import 'package:education/utils/constants.dart';
+import 'package:education/view/widgets/description_section.dart';
+import 'package:education/view/widgets/videos_section.dart';
 import 'package:flutter/material.dart';
 
 class CoursesScreen extends StatefulWidget {
@@ -10,6 +12,7 @@ class CoursesScreen extends StatefulWidget {
 }
 
 class _CoursesScreenState extends State<CoursesScreen> {
+  bool buttonSelected = false;
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -90,6 +93,75 @@ class _CoursesScreenState extends State<CoursesScreen> {
               color: Colors.black.withOpacity(0.7),
             ),
           ),
+          SizedBox(
+            height: size.height * 0.02,
+          ),
+          Container(
+            width: size.width,
+            height: size.height * 0.1,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: const Color(0xFFF5F3FF),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      buttonSelected = !buttonSelected;
+                    });
+                  },
+                  child: Material(
+                    color: buttonSelected
+                        ? primaryColor
+                        : primaryColor.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: size.height * 0.045,
+                          vertical: size.width * 0.03),
+                      child: const Text(
+                        "Videos",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      buttonSelected = !buttonSelected;
+                    });
+                  },
+                  child: Material(
+                    color: !buttonSelected
+                        ? primaryColor
+                        : primaryColor.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: size.height * 0.045,
+                          vertical: size.width * 0.03),
+                      child: const Text(
+                        "Description",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 10),
+          buttonSelected ? const VideoSection() : const DescriptionSection()
         ],
       ),
     );
